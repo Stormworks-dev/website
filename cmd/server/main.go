@@ -10,6 +10,7 @@ func main() {
 	templates := template.Must(template.ParseFiles(
 		"web/templates/layout.html",
 		"web/templates/header.html",
+		"web/templates/footer.html",
 	))
 
 	http.Handle("/static/", http.StripPrefix(
