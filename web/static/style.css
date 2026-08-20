@@ -197,7 +197,7 @@ footer {
 */
 .releases {
   display: flex;
-  min-height: 80vh;
+  min-height: 200vh;
 }
 .releases-sidebar {
   width: 10rem;
@@ -253,6 +253,7 @@ footer {
 
   padding-left: 2rem;
 }
+.release-nav a:hover,
 .release-nav a.current {
   color: #317ed2;
   font-weight: 500;
@@ -442,11 +443,8 @@ footer {
   font-size: 1.4rem;
   font-family: BlinkMacSystemFont, sans-serif;
 }
+.blog-nav a:hover,
 .blog-nav a.current {
-  color: #317ed2;
-  font-weight: 500;
-}
-.blog-nav a:hover {
   color: #317ed2;
   font-weight: 500;
 }
