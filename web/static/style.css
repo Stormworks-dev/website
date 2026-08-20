@@ -116,3 +116,69 @@ footer {
   justify-content: center;
   padding-top: 5rem;
 }
+
+/*home
+ */
+.home-title {
+  padding: 4.5rem 0 1rem;
+  border-top: 2px solid #2c3033;
+  background-color: #212426;
+}
+.home-title > div,
+.home-info > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.home-title h1,
+.home-title h2 {
+  font-weight: 400;
+}
+.home-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.home-title h2 {
+  font-size: 1.5rem;
+}
+
+.home-title a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1.75rem 1rem 1.75rem 1rem;
+
+  color: white;
+  text-decoration: none;
+
+  border: 2px solid #51565d;
+  border-radius: 9999px;
+}
+
+.home-title a:hover {
+  background-color: #2c3033;
+}
+
+.home-info h3 {
+  margin: 1.5rem 0 0 0;
+
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.home-info p {
+  padding-left: 0.5rem;
+  font-weight: 300;
+}
+.home-info a {
+  color: #a4cefe;
+}
+.home-info a:visited {
+  color: #a4cefe;
+}
+
+.home-info h4 {
+  font-weight: 500;
+  margin: 3rem 0 0;
+}
+.disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
