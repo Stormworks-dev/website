@@ -6,26 +6,40 @@ import (
 	"net/http"
 )
 
-func main() {
-	templates := template.Must(template.ParseFiles(
-		"web/templates/layout.html",
-		"web/templates/header.html",
-		"web/templates/footer.html",
-	))
+const port = ":8080"
 
+func main() {
 	http.Handle("/static/", http.StripPrefix(
 		"/static/",
 		http.FileServer(http.Dir("web/static")),
 	))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		page := selectPage(r.URL.Path)
+
+		templates := template.Must(template.ParseFiles(
+			"web/templates/layout.html",
+			"web/templates/header.html",
+			"web/templates/footer.html",
+			page,
+		))
+
 		err := templates.ExecuteTemplate(w, "layout.html", nil)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
 	})
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal(err)
+	}
+}
+
+func selectPage(path string) string {
+	switch path {
+	case "/":
+		return "web/pages/home.html"
+	default:
+		return "web/pages/404.html"
 	}
 }
