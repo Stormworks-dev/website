@@ -41,6 +41,8 @@ func selectPage(path string) string {
 		return "web/pages/home.html"
 	case "/releases":
 		return "web/pages/releases.html"
+	case "/blog":
+		return "web/pages/blog.html"
 	default:
 		return "web/pages/404.html"
 	}

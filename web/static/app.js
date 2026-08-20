@@ -32,3 +32,39 @@ if (releases) {
     observer.observe(article);
   });
 }
+
+const blog = document.querySelector(".blog");
+
+if (blog) {
+  const sidebar = document.querySelector(".blog-sidebar");
+  const toggle = document.querySelector(".sidebar-toggle");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+    toggle.textContent = sidebar.classList.contains("collapsed") ? "+" : "−";
+  });
+
+  const articles = blog.querySelectorAll(".post");
+  const links = blog.querySelectorAll(".blog-nav a");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const id = entry.target.id;
+
+        links.forEach((link) => {
+          link.classList.toggle("current", link.hash === `#${id}`);
+        });
+      });
+    },
+    {
+      rootMargin: "0px 0px -90% 0px",
+    },
+  );
+
+  articles.forEach((article) => {
+    observer.observe(article);
+  });
+}
