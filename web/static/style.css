@@ -184,7 +184,6 @@ footer {
 .home-info a:visited {
   color: #a4cefe;
 }
-
 .home-info h4 {
   font-weight: 500;
   margin: 3rem 0 0;
@@ -192,4 +191,195 @@ footer {
 .disclaimer {
   margin-top: 0.5rem;
   font-size: 0.85rem;
+}
+
+/*
+*/
+.releases {
+  display: flex;
+  min-height: 80vh;
+}
+.releases-sidebar {
+  width: 10rem;
+  flex-shrink: 0;
+  background-color: #2c3033;
+  border-right: 1px solid #51565d;
+  font: BlinkMacSystemFont, sans-serif;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  transition: width 0.2s ease;
+  overflow: hidden;
+}
+.releases-sidebar.collapsed {
+  width: 0;
+}
+.sidebar-toggle {
+  flex-shrink: 0;
+  margin-top: 0.75rem;
+  margin-left: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  position: sticky;
+  top: 0.75rem;
+
+  background-color: #18191b;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+.sidebar-toggle:hover {
+  background-color: #212426;
+  cursor: pointer;
+}
+
+.releases-sidebar > h4 {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  color: #71747e;
+  margin-bottom: 0.35rem;
+  margin-top: 0;
+}
+.release-nav ul {
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+
+  padding-left: 2rem;
+}
+.release-nav a.current {
+  color: #317ed2;
+  font-weight: 500;
+}
+.release-nav li {
+  margin-bottom: 0.1rem;
+}
+.release-nav a {
+  color: white;
+  display: block;
+  text-decoration: none;
+
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: BlinkMacSystemFont, sans-serif;
+}
+
+.releases-content {
+  flex: 1;
+}
+.releases-container {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-left: 10rem;
+  padding-right: 15rem;
+  box-sizing: border-box;
+}
+
+.release {
+  margin-bottom: 5rem;
+}
+.release-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  margin-bottom: 0.5rem;
+}
+.release-header h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-family: BlinkMacSystemFont, sans-serif;
+}
+.release-header span {
+  font-size: 1.4rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 350;
+}
+.release-header time {
+  font-size: 1rem;
+  color: #c3c7cb;
+}
+.release-body p {
+  margin: 0;
+  line-height: 1.2;
+}
+.release > hr {
+  border: 0;
+  border-top: 1px solid #3b3f44;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.release-changes summary {
+  cursor: pointer;
+  font-weight: 350;
+}
+.release-changes summary:hover {
+  text-decoration: underline;
+}
+.release-changes ul {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+
+  color: #c3c7cb;
+}
+.release-changes li:before {
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 0.25rem;
+}
+.release-changes li.changed::before {
+  content: "~";
+  color: #d6b66a;
+}
+
+.release-changes li.added::before {
+  content: "+";
+  color: #7aa7d9;
+}
+
+.release-changes li.fixed::before {
+  content: "✓";
+  color: #7fcf8a;
+}
+
+.release-changes li.removed::before {
+  content: "−";
+  color: #d47a7a;
+}
+
+.release-repos {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+
+  margin-top: 0.5rem;
+  padding-top: 0.2rem;
+  border-top: 1px dashed #3b3f44;
+
+  font-family: BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+.release-repo-list {
+  display: flex;
+  font-size: 0.7rem;
+  margin-top: 0;
+  gap: 0.5rem;
+}
+.release-repo-list a {
+  text-decoration: none;
+  color: #a4cefe;
+}
+.release-repo-list a:visited {
+  color: #a4cefe;
 }
