@@ -220,6 +220,11 @@ footer {
   padding-left: 0.5rem;
   font-weight: 300;
 }
+.home-info strong {
+  color: #fff;
+  font-size: 1.02em;
+  font-weight: 600;
+}
 .home-info a {
   color: #a4cefe;
 }
