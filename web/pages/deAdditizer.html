@@ -1,0 +1,90 @@
+{{ define "content" }}
+
+<main class="deAddi">
+  <section class="deAddi-title">
+    <div class="deAddi-title-name">
+      <span>deAdditizer</span>
+      <hr />
+    </div>
+    <p>Locally remove unnecessary file size from Stormworks vehicle files.</p>
+  </section>
+
+  <div class="deAddi-tool">
+    <section class="deAddi-input">
+      <div class="deAddi-panel-header">
+        <h3>Input</h3>
+      </div>
+
+      <textarea class="deAddi-editor" placeholder="paste XML here"></textarea>
+
+      <div class="deAddi-file" id="deAddi-file">
+        <span>or drop file</span>
+        <button type="button" id="deAddi-select">Select file</button>
+        <input type="file" id="deAddi-file-input" accept=".xml" hidden />
+      </div>
+    </section>
+
+    <section class="deAddi-flow">
+      <div class="deAddi-flow-panel">
+        <h3 id="deAddi-status">Ready</h3>
+
+        <div class="deAddi-flow-stat">
+          <strong id="blocks-changed">0</strong>
+          <span>Blocks adjusted</span>
+        </div>
+
+        <div class="deAddi-flow-stat">
+          <strong id="blocks-preserved">0</strong>
+          <span>Blocks preserved</span>
+        </div>
+
+        <div class="deAddi-flow-size">
+          <div>
+            <strong id="size-before">0 B</strong>
+            <span>Before</span>
+          </div>
+
+          <span class="deAddi-flow-arrow">→</span>
+
+          <div>
+            <strong id="size-after">0 B</strong>
+            <span>After</span>
+          </div>
+
+          <b id="size-reduction">0% smaller</b>
+        </div>
+
+        <div class="deAddi-flow-stat">
+          <strong id="process-time">0 ms</strong>
+          <span>Process time</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="deAddi-output">
+      <div class="deAddi-panel-header">
+        <h3>Output</h3>
+        <button
+          class="deAddi-copy"
+          id="deAddi-copy"
+          type="button"
+          aria-label="Copy processed XML"
+          title="Copy processed XML"
+        >
+          ⧉
+        </button>
+      </div>
+
+      <textarea
+        class="deAddi-editor deAddi-output-editor"
+        placeholder="processed XML will appear here"
+        readonly
+      ></textarea>
+
+      <button class="deAddi-download" id="deAddi-download">Download</button>
+    </section>
+  </div>
+  <script src="/static/deadditizer.bundle.js"></script>
+</main>
+
+{{ end }}
