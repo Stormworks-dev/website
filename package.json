@@ -1,0 +1,19 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Main website for stormworks.dev.",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild web/static/deadditizer.js --bundle --outfile=web/static/deadditizer.bundle.js",
+    "watch": "esbuild web/static/deadditizer.js --bundle --outfile=web/static/deadditizer.bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deadditizer": "github:Stormworks-dev/deAdditizer#v0.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
