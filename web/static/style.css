@@ -87,13 +87,25 @@ footer {
   justify-content: space-between;
 }
 .footer-title {
+  margin-bottom: 0;
   color: #c3c7cb;
   text-decoration: none;
 }
 .footer-disclaimer {
   font-size: 0.7rem;
+  margin-top: 0.2rem;
 }
+.footer-license {
+  display: block;
+  margin-top: 0.15rem;
 
+  color: #71747e;
+  font-size: 0.65rem;
+}
+.footer-license a {
+  text-decoration: none;
+  color: #71747e;
+}
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -112,10 +124,9 @@ footer {
 .discord-link {
   margin-left: 0.61rem;
 }
-
 .footer-credit {
   text-align: center;
-  font-size: 0.6;
+  font-size: 0.8rem;
 }
 
 /*404
@@ -508,22 +519,33 @@ footer {
 }
 .deAddi-title {
   background-color: #212426;
-  padding: 4rem 0 2.5rem 2.5rem;
+  padding: 4rem 0 3rem 2.5rem;
+  font-family: "Inter", sans-serif;
+}
+.deAddi-title > div {
+  max-width: 800px;
+  margin: 0 auto;
 }
 .deAddi-title-name {
   width: fit-content;
 }
 .deAddi-title-name span {
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
 }
-.deAddi-title-name hr {
-  width: 100%;
-  margin: 0rem 0 0.6rem 0;
-}
 .deAddi-title p {
-  margin: 0;
+  max-width: 600px;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+
+  color: #c3c7cb;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.deAddi-title small {
+  margin-top: 0.15rem;
+  color: #71747e;
+  font-size: 0.85rem;
 }
 
 .deAddi-tool {

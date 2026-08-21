@@ -15,7 +15,7 @@ func main() {
 	))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		page := selectPage(r.URL.Path)
+		page, title := selectPage(r.URL.Path)
 
 		templates := template.Must(template.ParseFiles(
 			"web/templates/layout.html",
@@ -24,7 +24,13 @@ func main() {
 			page,
 		))
 
-		err := templates.ExecuteTemplate(w, "layout.html", nil)
+		data := struct {
+			Title string
+		}{
+			Title: title,
+		}
+
+		err := templates.ExecuteTemplate(w, "layout.html", data)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
@@ -35,18 +41,18 @@ func main() {
 	}
 }
 
-func selectPage(path string) string {
+func selectPage(path string) (string, string) {
 	switch path {
 	case "/":
-		return "web/pages/home.html"
+		return "web/pages/home.html", "Stormworks.dev"
 	case "/releases":
-		return "web/pages/releases.html"
+		return "web/pages/releases.html", "Releases | Stormworks.dev"
 	case "/blog":
-		return "web/pages/blog.html"
+		return "web/pages/blog.html", "Blog | Stormworks.dev"
 	case "/tools/deAdditizer":
-		return "web/pages/deAdditizer.html"
+		return "web/pages/deAdditizer.html", "deAdditizer | Stormworks.dev"
 
 	default:
-		return "web/pages/404.html"
+		return "web/pages/404.html", "Page not found | Stormworks.dev"
 	}
 }
