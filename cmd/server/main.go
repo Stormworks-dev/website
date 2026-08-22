@@ -16,8 +16,15 @@ func main() {
 		log.Println("debug logging enabled")
 	}
 
+	storage, err := telemetry.OpenStorage()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer storage.Close()
+
 	http.HandleFunc("/telemetry", telemetry.NewHandler(telemetry.HandlerConfig{
-		Debug: debug,
+		Debug:   debug,
+		Storage: storage,
 	}))
 	http.HandleFunc("/telemetry/config", telemetry.ConfigHandler)
 

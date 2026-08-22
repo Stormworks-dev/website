@@ -7,7 +7,8 @@ import (
 )
 
 type HandlerConfig struct {
-	Debug bool
+	Debug   bool
+	Storage *Storage
 }
 
 func NewHandler(config HandlerConfig) http.HandlerFunc {
@@ -23,11 +24,18 @@ func NewHandler(config HandlerConfig) http.HandlerFunc {
 			return
 		}
 
-		encoded := Encode(event, 0)
+		if err := event.Validate(); err != nil {
+			http.Error(w, "invalid telemetry", http.StatusBadRequest)
+			return
+		}
+
+		if err := config.Storage.Append(event); err != nil {
+			http.Error(w, "failed to store telemetry", http.StatusInternalServerError)
+			return
+		}
 
 		if config.Debug {
 			logEvent(event)
-			log.Printf("encoded: %x", encoded)
 		}
 
 		w.WriteHeader(http.StatusNoContent)
