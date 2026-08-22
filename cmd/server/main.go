@@ -4,11 +4,23 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/Stormworks-dev/website/internal/telemetry"
 )
 
 const port = ":8080"
+const debug = true
 
 func main() {
+	if debug {
+		log.Println("debug logging enabled")
+	}
+
+	http.HandleFunc("/telemetry", telemetry.NewHandler(telemetry.HandlerConfig{
+		Debug: debug,
+	}))
+	http.HandleFunc("/telemetry/config", telemetry.ConfigHandler)
+
 	http.Handle("/static/", http.StripPrefix(
 		"/static/",
 		http.FileServer(http.Dir("web/static")),
@@ -36,6 +48,7 @@ func main() {
 		}
 	})
 
+	log.Println("server listening on port", port)
 	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal(err)
 	}
