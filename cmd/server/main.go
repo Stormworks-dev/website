@@ -34,6 +34,11 @@ func main() {
 	))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if redirect, ok := redirectPage(r.URL.Path); ok {
+			http.Redirect(w, r, redirect, http.StatusMovedPermanently)
+			return
+		}
+
 		page, title := selectPage(r.URL.Path)
 
 		templates := template.Must(template.ParseFiles(
@@ -75,4 +80,13 @@ func selectPage(path string) (string, string) {
 	default:
 		return "web/pages/404.html", "Page not found | Stormworks.dev"
 	}
+}
+
+func redirectPage(path string) (string, bool) {
+	switch path {
+	case "/tools/deadditizer":
+		return "/tools/deAdditizer", true
+	}
+
+	return "", false
 }
