@@ -63,13 +63,13 @@ func TestProtocol(t *testing.T) {
 			event: Event{
 				Type:   EventLinkClick,
 				Page:   PageHome,
-				Target: TargetGitHub,
+				Target: TargetHeaderGitHub,
 			},
 			data: []byte{
 				byte(EventLinkClick),
 				7,
 				byte(PageHome),
-				byte(TargetGitHub),
+				byte(TargetHeaderGitHub),
 			},
 		},
 	}

@@ -16,41 +16,7 @@
   <main class="releases-content">
     <div class="releases-container">
       <!--template
-      <article class="release" id="v1-0-0">
-        <div class="release-header">
-          <h2>v1.0.0 <span>- Update Name</span></h2>
-          <time datetime="2026-08-20">August 20, 2026</time>
-        </div>
-        <div class="release-body">
-          <p>
-            This is a test string This is a test string This is a test string
-            This is a test string This is a test string This is a test string
-            This is a test string This is a test string This is a test string
-            This is a test string
-          </p>
-        </div>
-        <hr />
 
-        <details class="release-changes">
-          <summary>Full list of changes</summary>
-          <ul>
-            <li class="changed">changed example change</li>
-            <li class="added">added example addition</li>
-            <li class="fixed">fixed example fix</li>
-            <li class="removed">removed example removal</li>
-          </ul>
-        </details>
-        <div class="release-repos">
-          <span>Related repositories:</span>
-          <div class="release-repo-list">
-            <a href="...">parser</a>
-            <span>·</span>
-            <a href="...">minifier</a>
-            <span>·</span>
-            <a href="...">website</a>
-          </div>
-        </div>
-      </article>
       -->
       <article class="release" id="v0-1-1">
         <div class="release-header">
@@ -76,7 +42,12 @@
         <div class="release-repos">
           <span>Related repositories:</span>
           <div class="release-repo-list">
-            <a href="https://github.com/Stormworks-dev/website">website</a>
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
+            >
+              website
+            </a>
           </div>
         </div>
       </article>
@@ -91,11 +62,12 @@
           <p>
             This is the foundation: the site, the first tool, and a few other
             little things. The first tool,
-            <a href="/tools/deAdditizer">deAdditizer</a>, is a lightweight XML
-            parser for reducing Stormworks vehicle file sizes. I'd like to say
-            it's anything more than a proof of concept, but at the moment it's
-            slower than I ever would've expected. At least for now, I think it
-            looks cool.
+            <a href="/tools/deAdditizer" data-telemetry="release_tool">
+              deAdditizer</a
+            >, is a lightweight XML parser for reducing Stormworks vehicle file
+            sizes. I'd like to say it's anything more than a proof of concept,
+            but at the moment it's slower than I ever would've expected. At
+            least for now, I think it looks cool.
           </p>
           <p class="body-end-start">Thank you for being here.</p>
           <p>
@@ -131,11 +103,19 @@
         <div class="release-repos">
           <span>Related repositories:</span>
           <div class="release-repo-list">
-            <a href="https://github.com/Stormworks-dev/website">website</a>
-            <span>·</span>
-            <a href="https://github.com/Stormworks-dev/deAdditizer/"
-              >deAdditizer</a
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
             >
+              website
+            </a>
+            <span>·</span>
+            <a
+              href="https://github.com/Stormworks-dev/deAdditizer/"
+              data-telemetry="release_tool_repo"
+            >
+              deAdditizer
+            </a>
           </div>
         </div>
       </article>

@@ -62,19 +62,55 @@ func (p Page) String() string {
 type LinkTarget uint8
 
 const (
-	TargetGitHubHeader LinkTarget = iota
-	TargetGitHub
-	TargetGitHubArticle
-	TargetGitHubFooter
+	TargetHeaderHome LinkTarget = iota
+	TargetHeaderDeAdditizer
+	TargetHeaderReleases
+	TargetHeaderBlog
+	TargetHeaderGitHub
+
+	TargetFooterHome
+	TargetFooterLicense
+	TargetFooterReleases
+	TargetFooterGitHub
+	TargetFooterDiscord
+	TargetFooterSteam
+
+	TargetHomeVehicleOptimizer
+	TargetHomeBlog
+	TargetHomeReleases
+	TargetHomeGitHub
+	TargetHomeDiscord
+
+	TargetReleaseTool
+	TargetReleaseWebsiteRepo
+	TargetReleaseToolRepo
 
 	LinkTargetCount
 )
 
 var linkTargetNames = [...]string{
-	"github_header",
-	"github",
-	"github_article",
-	"github_footer",
+	"header_home",
+	"header_deadditizer",
+	"header_releases",
+	"header_blog",
+	"header_github",
+
+	"footer_home",
+	"footer_license",
+	"footer_releases",
+	"footer_github",
+	"footer_discord",
+	"footer_steam",
+
+	"home_vehicle_optimizer",
+	"home_blog",
+	"home_releases",
+	"home_github",
+	"home_discord",
+
+	"release_tool",
+	"release_website_repo",
+	"release_tool_repo",
 }
 
 func (t LinkTarget) String() string {
