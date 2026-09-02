@@ -4,17 +4,41 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/Stormworks-dev/website/internal/telemetry"
 )
 
 const port = ":8080"
+const debug = true
 
 func main() {
+	if debug {
+		log.Println("debug logging enabled")
+	}
+
+	storage, err := telemetry.OpenStorage()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer storage.Close()
+
+	http.HandleFunc("/telemetry", telemetry.NewHandler(telemetry.HandlerConfig{
+		Debug:   debug,
+		Storage: storage,
+	}))
+	http.HandleFunc("/telemetry/config", telemetry.ConfigHandler)
+
 	http.Handle("/static/", http.StripPrefix(
 		"/static/",
 		http.FileServer(http.Dir("web/static")),
 	))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if redirect, ok := redirectPage(r.URL.Path); ok {
+			http.Redirect(w, r, redirect, http.StatusMovedPermanently)
+			return
+		}
+
 		page, title := selectPage(r.URL.Path)
 
 		templates := template.Must(template.ParseFiles(
@@ -36,6 +60,7 @@ func main() {
 		}
 	})
 
+	log.Println("server listening on port", port)
 	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal(err)
 	}
@@ -55,4 +80,13 @@ func selectPage(path string) (string, string) {
 	default:
 		return "web/pages/404.html", "Page not found | Stormworks.dev"
 	}
+}
+
+func redirectPage(path string) (string, bool) {
+	switch path {
+	case "/tools/deadditizer":
+		return "/tools/deAdditizer", true
+	}
+
+	return "", false
 }

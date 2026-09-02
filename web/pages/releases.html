@@ -7,6 +7,7 @@
         <!--template
         <li><a href="#v1-0-0">v1.0.0</a></li>
         -->
+        <li><a href="#v0-2-0">v0.2.0</a></li>
         <li><a href="#v0-1-1">v0.1.1</a></li>
         <li><a href="#v0-1-0">v0.1.0</a></li>
       </ul>
@@ -16,42 +17,61 @@
   <main class="releases-content">
     <div class="releases-container">
       <!--template
-      <article class="release" id="v1-0-0">
+
+      -->
+
+      <article class="release" id="v0-2-0">
         <div class="release-header">
-          <h2>v1.0.0 <span>- Update Name</span></h2>
-          <time datetime="2026-08-20">August 20, 2026</time>
+          <h2>v0.2.0 <span>- Bookkeeping</span></h2>
+          <time datetime="2026-09-2">September 2, 2026</time>
         </div>
         <div class="release-body">
+          <p>What a boring first update.</p>
           <p>
-            This is a test string This is a test string This is a test string
-            This is a test string This is a test string This is a test string
-            This is a test string This is a test string This is a test string
-            This is a test string
+            This update brings a telemetry system that keeps track of page
+            visits, link clicks, and tool usage. It doesn't record any
+            identifying information, just the metrics of how the site is used.
+          </p>
+          <p class="body-end-start">
+            And whilst this doesn't mean much just yet
+          </p>
+          <p>
+            I have a few plans for how these numbers can be used, once the more
+            important things are done.
           </p>
         </div>
         <hr />
-
         <details class="release-changes">
           <summary>Full list of changes</summary>
+          <span>Website</span>
           <ul>
-            <li class="changed">changed example change</li>
-            <li class="added">added example addition</li>
-            <li class="fixed">fixed example fix</li>
-            <li class="removed">removed example removal</li>
+            <li class="added">Added telemetry to site links</li>
+            <li class="added">Added redirects for legacy URLs</li>
+          </ul>
+          <span>Telemetry</span>
+          <ul>
+            <li class="added">Added site usage telemetry</li>
+            <li class="added">Added tool usage telemetry</li>
+          </ul>
+          <span>Infrastructure</span>
+          <ul>
+            <li class="added">Added persistent telemetry storage</li>
+            <li class="added">Added redirect system</li>
           </ul>
         </details>
         <div class="release-repos">
           <span>Related repositories:</span>
           <div class="release-repo-list">
-            <a href="...">parser</a>
-            <span>·</span>
-            <a href="...">minifier</a>
-            <span>·</span>
-            <a href="...">website</a>
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
+            >
+              website
+            </a>
           </div>
         </div>
       </article>
-      -->
+
       <article class="release" id="v0-1-1">
         <div class="release-header">
           <h2>v0.1.1 <span></span></h2>
@@ -68,7 +88,7 @@
           <summary>Full list of changes</summary>
           <span>Website</span>
           <ul>
-            <li class="added">Added the v0.1.0 release post</li>
+            <li class="added">Added the missing v0.1.0 release post</li>
             <li class="fixed">Fixed missing css release content from v0.1.0</li>
             <li class="fixed">Fixed version typo in deAdditizer</li>
           </ul>
@@ -76,7 +96,12 @@
         <div class="release-repos">
           <span>Related repositories:</span>
           <div class="release-repo-list">
-            <a href="https://github.com/Stormworks-dev/website">website</a>
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
+            >
+              website
+            </a>
           </div>
         </div>
       </article>
@@ -91,11 +116,12 @@
           <p>
             This is the foundation: the site, the first tool, and a few other
             little things. The first tool,
-            <a href="/tools/deAdditizer">deAdditizer</a>, is a lightweight XML
-            parser for reducing Stormworks vehicle file sizes. I'd like to say
-            it's anything more than a proof of concept, but at the moment it's
-            slower than I ever would've expected. At least for now, I think it
-            looks cool.
+            <a href="/tools/deAdditizer" data-telemetry="release_tool">
+              deAdditizer</a
+            >, is a lightweight XML parser for reducing Stormworks vehicle file
+            sizes. I'd like to say it's anything more than a proof of concept,
+            but at the moment it's slower than I ever would've expected. At
+            least for now, I think it looks cool.
           </p>
           <p class="body-end-start">Thank you for being here.</p>
           <p>
@@ -131,11 +157,19 @@
         <div class="release-repos">
           <span>Related repositories:</span>
           <div class="release-repo-list">
-            <a href="https://github.com/Stormworks-dev/website">website</a>
-            <span>·</span>
-            <a href="https://github.com/Stormworks-dev/deAdditizer/"
-              >deAdditizer</a
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
             >
+              website
+            </a>
+            <span>·</span>
+            <a
+              href="https://github.com/Stormworks-dev/deAdditizer/"
+              data-telemetry="release_tool_repo"
+            >
+              deAdditizer
+            </a>
           </div>
         </div>
       </article>

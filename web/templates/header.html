@@ -1,12 +1,31 @@
 {{ define "header" }}
 <header>
-  <a class="header-title" href="/">Stormworks.dev</a>
+  <a class="header-title" href="/" data-telemetry="header_home">
+    Stormworks.dev
+  </a>
+
   <nav>
-    <a class="nav-link tool-link" href="/tools/deAdditizer">deAdditizer</a>
-    <a class="nav-link" href="/releases">Releases</a>
-    <a class="nav-link" href="/blog">Blog</a>
-    <a class="nav-link" href="https://github.com/Stormworks-dev">Github ↗</a>
+    <a
+      class="nav-link tool-link"
+      href="/tools/deAdditizer"
+      data-telemetry="header_deadditizer"
+    >
+      deAdditizer
+    </a>
+
+    <a class="nav-link" href="/releases" data-telemetry="header_releases">
+      Releases
+    </a>
+
+    <a
+      class="nav-link"
+      href="https://github.com/Stormworks-dev"
+      data-telemetry="header_github"
+    >
+      Github ↗
+    </a>
   </nav>
 </header>
+
 <div class="site-notice">Not affiliated with Geometa or Stormworks.</div>
 {{ end }}

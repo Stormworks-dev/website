@@ -147,11 +147,19 @@
     const start = performance.now();
     const result = deAdditize(xml);
     const processTime = performance.now() - start;
+    const sizeBeforeBytes = new Blob([xml]).size;
+    const sizeAfterBytes = new Blob([result.data]).size;
+    telemetry.toolProcess({
+      tool: "deadditizer",
+      inputBytes: sizeBeforeBytes,
+      outputBytes: sizeAfterBytes,
+      processingMs: processTime,
+      blocksChanged: result.blocksChanged,
+      blocksPreserved: result.blocksPreserved
+    });
     output.value = result.data;
     blocksChanged.textContent = result.blocksChanged;
     blocksPreserved.textContent = result.blocksPreserved;
-    const sizeBeforeBytes = new Blob([xml]).size;
-    const sizeAfterBytes = new Blob([result.data]).size;
     sizeBefore.textContent = formatBytes(sizeBeforeBytes);
     sizeAfter.textContent = formatBytes(sizeAfterBytes);
     const reduction = (sizeBeforeBytes - sizeAfterBytes) / sizeBeforeBytes * 100;
