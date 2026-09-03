@@ -1,0 +1,93 @@
+{{ define "content" }}
+
+<main class="veOpt">
+  <section class="veOpt-title">
+    <div>
+      <div class="veOpt-title-name">
+        <span>Vehicle optimizer</span>
+      </div>
+      <small>v0.2.0</small>
+      <p>Locally remove unnecessary file size from Stormworks vehicle files.</p>
+    </div>
+  </section>
+
+  <div class="veOpt-tool">
+    <section class="veOpt-input">
+      <div class="veOpt-panel-header">
+        <h3>Input</h3>
+      </div>
+
+      <textarea class="veOpt-editor" placeholder="paste XML here"></textarea>
+
+      <div class="veOpt-file" id="veOpt-file">
+        <span>or drop file</span>
+        <button type="button" id="veOpt-select">Select file</button>
+        <input type="file" id="veOpt-file-input" accept=".xml" hidden />
+      </div>
+    </section>
+
+    <section class="veOpt-flow">
+      <div class="veOpt-flow-panel">
+        <h3 id="veOpt-status">Ready</h3>
+
+        <div class="veOpt-flow-stat">
+          <strong id="veOpt-blocks-changed">0</strong>
+          <span>Blocks adjusted</span>
+        </div>
+
+        <div class="veOpt-flow-stat">
+          <strong id="veOpt-blocks-preserved">0</strong>
+          <span>Blocks preserved</span>
+        </div>
+
+        <div class="veOpt-flow-size">
+          <div>
+            <strong id="veOpt-size-before">0 B</strong>
+            <span>Before</span>
+          </div>
+
+          <span class="veOpt-flow-arrow">→</span>
+
+          <div>
+            <strong id="veOpt-size-after">0 B</strong>
+            <span>After</span>
+          </div>
+
+          <b id="veOpt-size-reduction">0% smaller</b>
+        </div>
+
+        <div class="veOpt-flow-stat">
+          <strong id="veOpt-process-time">0 ms</strong>
+          <span>Process time</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="veOpt-output">
+      <div class="veOpt-panel-header">
+        <h3>Output</h3>
+        <button
+          class="veOpt-copy"
+          id="veOpt-copy"
+          type="button"
+          aria-label="Copy processed XML"
+          title="Copy processed XML"
+        >
+          ⧉
+        </button>
+      </div>
+
+      <textarea
+        class="veOpt-editor veOpt-output-editor"
+        placeholder="processed XML will appear here"
+        readonly
+      ></textarea>
+
+      <button class="veOpt-download" id="veOpt-download">Download</button>
+    </section>
+  </div>
+
+  <script src="/static/vehicle-optimizer.bundle.js"></script>
+</main>
+
+{{ end }}

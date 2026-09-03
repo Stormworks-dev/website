@@ -1,22 +1,22 @@
-import { deAdditize } from "deadditizer";
+import { optimizeVehicle } from "vehicle-optimizer";
 
-const input = document.querySelector(".deAddi-input .deAddi-editor");
-const output = document.querySelector(".deAddi-output-editor");
+const input = document.querySelector(".veOpt-input .veOpt-editor");
+const output = document.querySelector(".veOpt-output-editor");
 
-const status = document.querySelector("#deAddi-status");
-const blocksChanged = document.querySelector("#blocks-changed");
-const blocksPreserved = document.querySelector("#blocks-preserved");
-const sizeBefore = document.querySelector("#size-before");
-const sizeAfter = document.querySelector("#size-after");
-const sizeReduction = document.querySelector("#size-reduction");
-const processTimeElement = document.querySelector("#process-time");
+const status = document.querySelector("#veOpt-status");
+const blocksChanged = document.querySelector("#veOpt-blocks-changed");
+const blocksPreserved = document.querySelector("#veOpt-blocks-preserved");
+const sizeBefore = document.querySelector("#veOpt-size-before");
+const sizeAfter = document.querySelector("#veOpt-size-after");
+const sizeReduction = document.querySelector("#veOpt-size-reduction");
+const processTimeElement = document.querySelector("#veOpt-process-time");
 
-const fileDrop = document.querySelector("#deAddi-file");
-const fileSelect = document.querySelector("#deAddi-select");
-const fileInput = document.querySelector("#deAddi-file-input");
+const fileDrop = document.querySelector("#veOpt-file");
+const fileSelect = document.querySelector("#veOpt-select");
+const fileInput = document.querySelector("#veOpt-file-input");
 
-const download = document.querySelector("#deAddi-download");
-const copy = document.querySelector("#deAddi-copy");
+const download = document.querySelector("#veOpt-download");
+const copy = document.querySelector("#veOpt-copy");
 
 let outputFilename = "processed.xml";
 
@@ -68,14 +68,14 @@ function processInput() {
   }
 
   const start = performance.now();
-  const result = deAdditize(xml);
+  const result = optimizeVehicle(xml);
   const processTime = performance.now() - start;
 
   const sizeBeforeBytes = new Blob([xml]).size;
   const sizeAfterBytes = new Blob([result.data]).size;
 
   telemetry.toolProcess({
-    tool: "deadditizer",
+    tool: "vehicle_optimizer",
     inputBytes: sizeBeforeBytes,
     outputBytes: sizeAfterBytes,
     processingMs: processTime,

@@ -2,16 +2,15 @@
 
 Optimization tools for Stormworks.
 
- 
-
 ## Current toolset
 
-### deAdditizer
-Lightweight XML parser for reducing Stormworks vehicle file size.
-[repo](https://github.com/Stormworks-dev/deAdditizer/)
+### vehicle-optimizer
 
+Lightweight XML parser for reducing Stormworks vehicle file size.
+[repo](https://github.com/Stormworks-dev/vehicle-optimizer)
 
 ---
+
 ## Deployment
 
 To access the site, either visit [Stormworks.dev](https://stormworks.dev/) or run it locally.

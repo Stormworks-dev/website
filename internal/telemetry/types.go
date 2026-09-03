@@ -37,7 +37,7 @@ const (
 	PageHome Page = iota
 	PageBlog
 	PageReleases
-	PageDeadditizer
+	PageVehicleOptimizer
 	Page404
 
 	PageCount
@@ -47,7 +47,7 @@ var pageNames = [...]string{
 	"/",
 	"/blog",
 	"/releases",
-	"/tools/deAdditizer",
+	"/tools/vehicle-optimizer",
 	"404",
 }
 
@@ -63,7 +63,7 @@ type LinkTarget uint8
 
 const (
 	TargetHeaderHome LinkTarget = iota
-	TargetHeaderDeAdditizer
+	TargetHeaderVehicleOptimizer
 	TargetHeaderReleases
 	TargetHeaderBlog
 	TargetHeaderGitHub
@@ -90,7 +90,7 @@ const (
 
 var linkTargetNames = [...]string{
 	"header_home",
-	"header_deadditizer",
+	"header_vehicle_optimizer",
 	"header_releases",
 	"header_blog",
 	"header_github",
@@ -124,13 +124,13 @@ func (t LinkTarget) String() string {
 type Tool uint8
 
 const (
-	ToolDeAdditizer Tool = iota
+	ToolVehicleOptimizer Tool = iota
 
 	ToolCount
 )
 
 var toolNames = [...]string{
-	"deadditizer",
+	"vehicle_optimizer",
 }
 
 func (t Tool) String() string {
