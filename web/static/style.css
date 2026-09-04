@@ -364,7 +364,7 @@ footer {
   margin-bottom: 0;
 }
 .release-body .body-end-start {
-  margin-top: 0.25rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .release-body a {
@@ -454,6 +454,9 @@ footer {
 }
 .release-repo-list a:visited {
   color: #a4cefe;
+}
+.highlight {
+  color: #7fcf8a;
 }
 
 /*
@@ -618,7 +621,7 @@ footer {
 .veOpt-output {
   flex: 1;
 
-  min-height: 50vh;
+  min-height: 45vh;
 }
 
 .veOpt-panel-header {
@@ -826,4 +829,8 @@ footer {
 }
 .veOpt-copy:active {
   color: #7fcf8a;
+}
+
+.veOpt-stats {
+  margin: 0 0 0 5rem;
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"html/template"
 	"log"
 	"net/http"
@@ -27,6 +28,24 @@ func main() {
 		Storage: storage,
 	}))
 	http.HandleFunc("/telemetry/config", telemetry.ConfigHandler)
+
+	http.HandleFunc("/telemetry/stats", func(w http.ResponseWriter, r *http.Request) {
+		stats, err := telemetry.ReadStats("data/telemetry.bin", telemetry.ToolVehicleOptimizer)
+		if err != nil {
+			http.Error(w, "failed to read telemetry stats", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+
+		json.NewEncoder(w).Encode(struct {
+			Uses    uint64  `json:"uses"`
+			InputMB float64 `json:"input_mb"`
+		}{
+			Uses:    stats.Uses,
+			InputMB: float64(stats.InputBytes) / 1024 / 1024,
+		})
+	})
 
 	http.Handle("/static/", http.StripPrefix(
 		"/static/",
