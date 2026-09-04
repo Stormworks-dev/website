@@ -4,14 +4,14 @@
   "description": "Main website for stormworks.dev.",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild web/static/deadditizer.js --bundle --outfile=web/static/deadditizer.bundle.js",
-    "watch": "esbuild web/static/deadditizer.js --bundle --outfile=web/static/deadditizer.bundle.js --watch"
+    "build": "esbuild web/static/vehicle-optimizer.js --bundle --outfile=web/static/vehicle-optimizer.bundle.js",
+    "watch": "esbuild web/static/vehicle-optimizer.js --bundle --outfile=web/static/vehicle-optimizer.bundle.js --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "deadditizer": "github:Stormworks-dev/deAdditizer#v0.1.0"
+    "vehicle-optimizer": "github:Stormworks-dev/vehicle-optimizer#feat/parser-rewrite"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
