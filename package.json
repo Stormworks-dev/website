@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vehicle-optimizer": "github:Stormworks-dev/vehicle-optimizer#feat/parser-rewrite"
+    "vehicle-optimizer": "github:Stormworks-dev/vehicle-optimizer#v0.2.0"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
