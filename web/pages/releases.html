@@ -7,6 +7,7 @@
         <!--template
         <li><a href="#v1-0-0">v1.0.0</a></li>
         -->
+        <li><a href="#v0-3-0">v0.3.0</a></li>
         <li><a href="#v0-2-0">v0.2.0</a></li>
         <li><a href="#v0-1-1">v0.1.1</a></li>
         <li><a href="#v0-1-0">v0.1.0</a></li>
@@ -19,6 +20,85 @@
       <!--template
 
       -->
+
+      <article class="release" id="v0-3-0">
+        <div class="release-header">
+          <h2>v0.3.0 <span>- 7x more, 310x faster</span></h2>
+          <time datetime="2026-09-04">September 4, 2026</time>
+        </div>
+        <div class="release-body">
+          <p>I have completely rewritten the parser from the ground up.</p>
+          <p>
+            In total, the size removed has gone up roughly 7x, now hitting a
+            typical range of <span class="highlight">~28-40%</span>. For
+            context, this now means a large 20mb creation could have ~5-11mb's
+            shaved off. Never changing your vehicles, just massively increasing
+            performance.
+          </p>
+          <p>
+            But thats not all, even while doing way more, this version is
+            faster, way faster, processing time is
+            <span class="highlight">down ~99.7%</span> overall compared to the
+            old version.
+          </p>
+          <p>
+            This was done by throwing out the DOM parser entirely, replacing it
+            with a raw single-pass scan that cuts down on memory and time
+            complexity massively.
+          </p>
+          <p class="body-end-start">
+            The next steps are mainly filling in the gaps.
+          </p>
+          <p>
+            That mostly means manually filling in the lists of what blocks can
+            have what done to them.
+          </p>
+        </div>
+        <hr />
+        <details class="release-changes">
+          <summary>Full list of changes</summary>
+          <span>Website</span>
+          <ul>
+            <li class="changed">Renamed deAdditizer to Vehicle Optimizer</li>
+            <li class="changed">Updated tool page, routes, and telemetry</li>
+            <li class="changed">Updated vehicle-optimizer to its v0.2.0</li>
+            <li class="added">Added simple vehicle-optimizer usage stat</li>
+          </ul>
+
+          <span>Vehicle optimizer</span>
+          <ul>
+            <li class="changed">Reworked existing parser tests</li>
+            <li class="added">Added new parser tests</li>
+            <li class="changed">Renamed the package to vehicle-optimizer</li>
+            <li class="changed">Renamed the public API to optimizeVehicle</li>
+          </ul>
+
+          <span>Infrastructure</span>
+          <ul>
+            <li class="changed">
+              Updated deployment live build for pre-release
+            </li>
+          </ul>
+        </details>
+        <div class="release-repos">
+          <span>Related repositories:</span>
+          <div class="release-repo-list">
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
+            >
+              website
+            </a>
+            <span>·</span>
+            <a
+              href="https://github.com/Stormworks-dev/vehicle-optimizer/"
+              data-telemetry="release_tool_repo"
+            >
+              vehicle-optimizer
+            </a>
+          </div>
+        </div>
+      </article>
 
       <article class="release" id="v0-2-0">
         <div class="release-header">
@@ -108,25 +188,19 @@
 
       <article class="release" id="v0-1-0">
         <div class="release-header">
-          <h2>v0.1.0 <span>- The beginning</span></h2>
+          <h2>v0.1.0 <span>- </span></h2>
           <time datetime="2026-08-21">August 21, 2026</time>
         </div>
         <div class="release-body">
-          <p>Welcome to the first pre-release of Stormworks.dev.</p>
           <p>
             This is the foundation: the site, the first tool, and a few other
-            little things. The first tool,
-            <a href="/tools/deAdditizer" data-telemetry="release_tool">
-              deAdditizer</a
-            >, is a lightweight XML parser for reducing Stormworks vehicle file
-            sizes. I'd like to say it's anything more than a proof of concept,
-            but at the moment it's slower than I ever would've expected. At
-            least for now, I think it looks cool.
+            little things. I'd like to say it's good, but at the moment it's
+            slower than I ever would've expected. At least for now, I think it
+            looks okay.
           </p>
-          <p class="body-end-start">Thank you for being here.</p>
-          <p>
-            You can expect a full parser rework, cool stats, and prettier pages
-            soon enough.
+          <p class="body-end-start">
+            I have begun work on a full parser rework, metric stats, and
+            prettier pages which will come soon enough.
           </p>
         </div>
         <hr />
