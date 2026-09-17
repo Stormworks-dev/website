@@ -103,6 +103,9 @@ func selectPage(path string) (string, string) {
 
 func redirectPage(path string) (string, int, bool) {
 	switch path {
+	case "/":
+		return "/tools/vehicle-optimizer", http.StatusMovedPermanently, true
+
 	case "/tools/deadditizer", "/tools/deAdditizer":
 		return "/tools/vehicle-optimizer", http.StatusMovedPermanently, true
 
