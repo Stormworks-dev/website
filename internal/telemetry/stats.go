@@ -31,7 +31,8 @@ func ReadStats(path string, tool Tool) (Stats, error) {
 
 		if record.Event.Type != EventToolProcess ||
 			record.Event.Tool != tool ||
-			record.Event.InputBytes == 0 {
+			record.Event.InputBytes == 0 ||
+			record.Event.InputBytes == record.Event.OutputBytes {
 			continue
 		}
 
