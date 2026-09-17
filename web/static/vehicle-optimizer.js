@@ -100,6 +100,19 @@ function processInput() {
   status.textContent = "Processed";
 }
 
+function loadFile(file) {
+  if (!file.name.toLowerCase().endsWith(".xml")) {
+    return;
+  }
+
+  outputFilename = file.name;
+
+  file.text().then((xml) => {
+    input.value = xml;
+    processInput();
+  });
+}
+
 input.addEventListener("input", processInput);
 
 fileSelect.addEventListener("click", () => {
@@ -113,12 +126,7 @@ fileInput.addEventListener("change", () => {
     return;
   }
 
-  outputFilename = file.name;
-
-  file.text().then((xml) => {
-    input.value = xml;
-    processInput();
-  });
+  loadFile(file);
 });
 
 fileDrop.addEventListener("dragenter", (event) => {
@@ -153,12 +161,7 @@ fileDrop.addEventListener("drop", (event) => {
     return;
   }
 
-  outputFilename = file.name;
-
-  file.text().then((xml) => {
-    input.value = xml;
-    processInput();
-  });
+  loadFile(file);
 });
 
 copy.addEventListener("click", async () => {
