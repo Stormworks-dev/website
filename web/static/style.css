@@ -347,6 +347,12 @@ footer {
   font-weight: 300;
   font-family: BlinkMacSystemFont, sans-serif;
 }
+.release-type-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+}
 .release-header span {
   font-size: 1.4rem;
   font-family: "Inter", sans-serif;
