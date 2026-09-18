@@ -2,12 +2,28 @@
 
 <main class="veOpt">
   <section class="veOpt-title">
-    <div>
-      <div class="veOpt-title-name">
-        <span>Vehicle optimizer</span>
+    <div class="veOpt-title-inner">
+      <div>
+        <div class="veOpt-title-name">
+          <span>Vehicle optimizer</span>
+        </div>
+        <small>v0.3.0</small>
+        <p>
+          Locally remove unnecessary file size from Stormworks vehicle files.
+        </p>
       </div>
-      <small>v0.3.0</small>
-      <p>Locally remove unnecessary file size from Stormworks vehicle files.</p>
+
+      <div class="veOpt-stats">
+        <span class="veOpt-stats-title">global</span>
+        <div>
+          <span>uses</span>
+          <strong id="tool-usage">—</strong>
+        </div>
+        <div>
+          <span>processed</span>
+          <strong><span id="tool-input">—</span> MB</strong>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -86,11 +102,6 @@
       <button class="veOpt-download" id="veOpt-download">Download</button>
     </section>
   </div>
-  <pre class="veOpt-stats">
-    global
-      <span id="tool-usage">—</span> uses
-      <span id="tool-input">—</span> MB processed
-  </pre>
 
   <script src="/static/tool-stats.js"></script>
   <script src="/static/vehicle-optimizer.bundle.js"></script>

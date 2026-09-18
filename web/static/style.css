@@ -591,9 +591,37 @@ footer {
   padding: 4rem 0 3rem 2.5rem;
   font-family: "Inter", sans-serif;
 }
-.veOpt-title > div {
+.veOpt-title-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
   max-width: 800px;
   margin: 0 auto;
+}
+.veOpt-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  margin: 0;
+  min-width: 7rem;
+
+  color: #c3c7cb;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.veOpt-stats-title {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.veOpt-stats div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.veOpt-stats strong {
+  font-weight: 400;
 }
 .veOpt-title-name {
   width: fit-content;
@@ -835,8 +863,4 @@ footer {
 }
 .veOpt-copy:active {
   color: #7fcf8a;
-}
-
-.veOpt-stats {
-  margin: 0 0 0 5rem;
 }
