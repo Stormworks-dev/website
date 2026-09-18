@@ -109,6 +109,8 @@
     "searchlight_small",
     "button_toggle",
     "button_toggle_2side",
+    "button_push",
+    "button_push_2side",
     "inventory_outfit_parachute",
     "inventory_equipment_defibrillator",
     "trans_block_angle",
@@ -130,7 +132,14 @@
     "dial",
     "compass",
     "multibody_compact_pivot_b",
-    "ladder_small"
+    "ladder_small",
+    "camera_small",
+    "clock",
+    "door_frame_corner",
+    "linear_compact_module",
+    "jet_engine_turbine_small",
+    "jet_engine_duct_cross",
+    "jet_engine_turbine_medium"
   ]);
   var scRemovableComponents = /* @__PURE__ */ new Set([
     "test_sc_removable_component",
