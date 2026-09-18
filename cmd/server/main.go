@@ -94,7 +94,7 @@ func selectPage(path string) (string, string) {
 	case "/blog":
 		return "web/pages/blog.html", "Blog | Stormworks.dev"
 	case "/tools/vehicle-optimizer":
-		return "web/pages/vehicle-optimizer.html", "Vehicle optimizer | Stormworks.dev"
+		return "web/pages/vehicle-optimizer.html", "Optimizer | Stormworks.dev"
 
 	default:
 		return "web/pages/404.html", "Page not found | Stormworks.dev"
