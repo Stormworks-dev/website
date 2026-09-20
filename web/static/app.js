@@ -11,26 +11,25 @@ if (releases) {
   const articles = releases.querySelectorAll(".release");
   const links = releases.querySelectorAll(".release-nav a");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  const updateCurrent = () => {
+    const trigger = window.innerHeight * 0.3;
+    let current = articles[0];
 
-        const id = entry.target.id;
+    articles.forEach((article) => {
+      if (article.getBoundingClientRect().top <= trigger) {
+        current = article;
+      }
+    });
 
-        links.forEach((link) => {
-          link.classList.toggle("current", link.hash === `#${id}`);
-        });
-      });
-    },
-    {
-      rootMargin: "0px 0px -90% 0px",
-    },
-  );
+    const id = current.id;
 
-  articles.forEach((article) => {
-    observer.observe(article);
-  });
+    links.forEach((link) => {
+      link.classList.toggle("current", link.hash === `#${id}`);
+    });
+  };
+
+  window.addEventListener("scroll", updateCurrent, { passive: true });
+  updateCurrent();
 }
 
 const blog = document.querySelector(".blog");
