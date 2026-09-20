@@ -864,3 +864,14 @@ footer {
 .veOpt-copy:active {
   color: #7fcf8a;
 }
+.veOpt-notice {
+  margin: 0.1rem auto 0;
+  padding: 0 1rem;
+
+  color: #c3c7cb;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.veOpt-notice a {
+  color: #a4cefe;
+}
