@@ -654,8 +654,6 @@ footer {
 .veOpt-flow,
 .veOpt-output {
   flex: 1;
-
-  min-height: 45vh;
 }
 
 .veOpt-panel-header {
