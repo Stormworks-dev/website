@@ -117,6 +117,87 @@
       >on github</a
     >.
   </p>
+  <hr />
+  <div class="veOpt-docs">
+    <section>
+      <h2>what does this do exactly?</h2>
+      <p>
+        vehicle files contain a lot of redundant and unused XML attributes.
+        removing those typically cuts 13–40% of the file size, reducing the
+        amount of data that needs to be sent, processed, and synchronized.
+        <span class="highlight"
+          >these savings compound in multiplayer, improving fps, tps, and
+          desync.</span
+        >
+      </p>
+      <details>
+        <summary>Specifically</summary>
+        <ul>
+          <li>removes empty <code>&lt;logic_slots&gt;</code> elements</li>
+          <li>removes empty <code>&lt;slot/&gt;</code> elements</li>
+          <li>
+            removes <code>ac=""</code> from components that don't use additive
+            color
+          </li>
+          <li>
+            removes <code>r=""</code> from components that look the same
+            regardless of rotation
+          </li>
+          <li>
+            removes <code>r=""</code> when the default rotation can be safely
+            omitted
+          </li>
+          <li>
+            removes <code>sc=""</code> when it only contains the face count
+            rather than actual face colors
+          </li>
+          <li>
+            removes <code>bc=""</code> when face colors are present and the base
+            color can be safely omitted
+          </li>
+          <li>removes default names and descriptions</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
+      <h2>how does this work?</h2>
+      <p>
+        the file is processed entirely in your browser with a single-pass
+        scanner. it reads through the xml once and applies each rule as it goes.
+        <span class="highlight"
+          >nothing from the vehicle is ever sent anywhere.</span
+        >
+      </p>
+
+      <p>
+        <strong>and this is provably safe</strong>: the parser runs in the
+        browser, is opensource and you can see every network request the page
+        makes along with exactly what js is running in your browser's developer
+        tools.
+      </p>
+
+      <details>
+        <summary>What exactly is actually sent</summary>
+        <span>on every usage, the following is sent:</span>
+        <pre><code> {
+   "type": "tool_process",
+   "tool": "vehicle_optimizer",
+   "input_bytes": _,
+   "output_bytes": _,
+   "processing_ms": _,
+   "blocks_changed": _,
+   "blocks_preserved": _,
+   "page": "vehicle-optimizer"
+  }</code></pre>
+        <p>
+          this data is timestamped and stored server-side to track usage. it
+          contains no vehicle data or IP address.
+        </p>
+      </details>
+    </section>
+  </div>
+
   <script src="/static/tool-stats.js"></script>
   <script src="/static/vehicle-optimizer.bundle.js"></script>
 </main>
