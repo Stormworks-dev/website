@@ -144,7 +144,11 @@
     "wing_large",
     "wing_medium",
     "wing_small",
-    "wing_xl"
+    "wing_xl",
+    "fan_small",
+    "fan_large",
+    "jet_engine_intake_large",
+    "jet_engine_intake_small"
   ]);
   var scRemovableComponents = /* @__PURE__ */ new Set([
     "test_sc_removable_component",

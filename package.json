@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vehicle-optimizer": "github:Stormworks-dev/vehicle-optimizer#feat/fill-component-lists"
+    "vehicle-optimizer": "github:Stormworks-dev/vehicle-optimizer"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
