@@ -120,13 +120,14 @@
   <hr />
   <div class="veOpt-docs">
     <section>
-      <h2>what does this do?</h2>
+      <h2>what this does</h2>
       <p>
         vehicle files contain a lot of redundant and unused XML attributes.
         removing those typically cuts 13–40% of the file size, reducing the
-        amount of data that needs to be sent, processed, and synchronized.
+        amount of data that needs to be sent, processed, and synchronized. while
+        sometimes unnoticable,
         <span class="highlight"
-          >these savings compound in multiplayer, improving fps, tps, and
+          >savings compound in multiplayer, improving fps, tps, and
           desync.</span
         >
       </p>
@@ -161,10 +162,10 @@
     </section>
 
     <section>
-      <h2>how does this work?</h2>
+      <h2>how this works</h2>
       <p>
-        the file is processed entirely in your browser with a single-pass
-        scanner. it reads through the xml once and applies each rule as it goes.
+        the file is processed entirely in your browser. it reads through the xml
+        once and applies each rule as it goes.
         <span class="highlight"
           >nothing from the vehicle is ever sent anywhere.</span
         >
@@ -172,13 +173,12 @@
 
       <p>
         <strong>and this is provably safe</strong>: the parser runs in the
-        browser, is opensource and you can see every network request the page
-        makes along with exactly what js is running in your browser's developer
-        tools.
+        browser, is open source, and you can inpsect the bundled js and all
+        network requests in your browser's devtools.
       </p>
 
       <details>
-        <summary>What exactly is actually sent</summary>
+        <summary>Specifically</summary>
         <span>on every usage, the following is sent:</span>
         <pre><code> {
    "type": "tool_process",
