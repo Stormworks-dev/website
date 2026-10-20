@@ -134,27 +134,23 @@
       <details>
         <summary>Specifically</summary>
         <ul>
-          <li>removes empty <code>&lt;logic_slots&gt;</code> elements</li>
-          <li>removes empty <code>&lt;slot/&gt;</code> elements</li>
+          <li>
+            removes empty <code>&lt;logic_slots&gt;</code> and
+            <code>&lt;slot/&gt;</code> elements
+          </li>
           <li>
             removes <code>ac=""</code> from components that don't use additive
             color
           </li>
           <li>
-            removes <code>r=""</code> from components that look the same
-            regardless of rotation
+            removes <code>r=""</code> when rotation doesn't affect the component
+            or the default rotation is used
           </li>
           <li>
-            removes <code>r=""</code> when the default rotation can be safely
-            omitted
+            removes <code>sc=""</code> when it only specifies the face count
           </li>
           <li>
-            removes <code>sc=""</code> when it only contains the face count
-            rather than actual face colors
-          </li>
-          <li>
-            removes <code>bc=""</code> when face colors are present and the base
-            color can be safely omitted
+            removes <code>bc=""</code> when face colors are specified separately
           </li>
           <li>removes default names and descriptions</li>
         </ul>

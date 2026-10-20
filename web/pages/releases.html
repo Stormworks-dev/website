@@ -6,6 +6,7 @@
       <ul>
         <!--template
         -->
+        <li><a href="#v1-0-0">v1.0.0</a></li>
         <li><a href="#v0-3-0">v0.3.0</a></li>
         <li><a href="#v0-2-0">v0.2.0</a></li>
         <li><a href="#v0-1-1">v0.1.1</a></li>
@@ -19,6 +20,68 @@
       <!--template
 
       -->
+      <article class="release" id="v1-0-0">
+        <div class="release-header">
+          <h2>
+            <img
+              class="release-type-icon"
+              src="/static/icons/releases/major.svg"
+              alt=""
+            />
+            v1.0.0
+            <span></span>
+          </h2>
+          <time datetime="2026-10-19">October 19, 2026</time>
+        </div>
+        <div class="release-body">
+          <p>
+            Took awhile, but things are stable now. ofc more tools are coming
+            soon
+          </p>
+          <p class="body-end-start">
+            Thanks to shadow for helping review xml attributes, and Bluefire for
+            explaining js bundling.
+          </p>
+        </div>
+        <hr />
+        <details class="release-changes">
+          <summary>Full list of changes</summary>
+          <span>Website</span>
+          <ul>
+            <li class="added">Added basic documentation</li>
+            <li class="fixed">Fixed file validation and telemetry metrics</li>
+            <li class="changed">Updated vehicle-optimizer to v1.0.0 tag</li>
+          </ul>
+
+          <span>Vehicle Optimizer</span>
+          <ul>
+            <li class="added">Filled out component lists for proper usage</li>
+          </ul>
+
+          <span>Backend</span>
+          <ul>
+            <li class="changed">Reworked backend cache tunnel system</li>
+          </ul>
+        </details>
+        <div class="release-repos">
+          <span>Related repositories:</span>
+          <div class="release-repo-list">
+            <a
+              href="https://github.com/Stormworks-dev/website"
+              data-telemetry="release_website_repo"
+            >
+              website
+            </a>
+            <span>·</span>
+            <a
+              href="https://github.com/Stormworks-dev/vehicle-optimizer/"
+              data-telemetry="release_tool_repo"
+            >
+              vehicle-optimizer
+            </a>
+          </div>
+        </div>
+      </article>
 
       <article class="release" id="v0-3-0">
         <div class="release-header">
@@ -60,7 +123,7 @@
           <ul>
             <li class="changed">Renamed deAdditizer to Vehicle Optimizer</li>
             <li class="changed">Updated tool page, routes, and telemetry</li>
-            <li class="changed">Updated vehicle-optimizer to its v0.2.0</li>
+            <li class="changed">Updated vehicle-optimizer to v0.2.0 tag</li>
             <li class="added">Added simple vehicle-optimizer usage stat</li>
           </ul>
 
@@ -72,7 +135,7 @@
             <li class="changed">Renamed the public API to optimizeVehicle</li>
           </ul>
 
-          <span>Infrastructure</span>
+          <span>Backend</span>
           <ul>
             <li class="changed">
               Updated deployment live build for pre-release
@@ -126,7 +189,7 @@
             <li class="added">Added site usage telemetry</li>
             <li class="added">Added tool usage telemetry</li>
           </ul>
-          <span>Infrastructure</span>
+          <span>Backend</span>
           <ul>
             <li class="added">Added persistent telemetry storage</li>
             <li class="added">Added redirect system</li>
@@ -206,7 +269,7 @@
             <li class="added">Added the releases page</li>
             <li class="added">Added the blog page</li>
             <li class="added">Added the deAdditizer tool page</li>
-            <li class="changed">Built deAdditizer to match it's v0.1.0</li>
+            <li class="changed">Built deAdditizer to match v0.1.0 tag</li>
           </ul>
 
           <span>deAdditizer</span>
@@ -215,7 +278,7 @@
             <li class="added">Added the initial XML parser</li>
           </ul>
 
-          <span>Infrastructure</span>
+          <span>Backend</span>
           <ul>
             <li class="added">Added the initial Go server</li>
             <li class="changed">Configured the site for deployment</li>
