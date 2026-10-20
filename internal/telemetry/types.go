@@ -85,6 +85,9 @@ const (
 	TargetReleaseWebsiteRepo
 	TargetReleaseToolRepo
 
+	TargetVeoptNoticeDiscord
+	TargetVeoptNoticeGithub
+
 	LinkTargetCount
 )
 
@@ -111,6 +114,9 @@ var linkTargetNames = [...]string{
 	"release_tool",
 	"release_website_repo",
 	"release_tool_repo",
+
+	"vopt_notice_discord",
+	"veopt_notice_github",
 }
 
 func (t LinkTarget) String() string {

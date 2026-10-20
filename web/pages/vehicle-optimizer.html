@@ -2,12 +2,28 @@
 
 <main class="veOpt">
   <section class="veOpt-title">
-    <div>
-      <div class="veOpt-title-name">
-        <span>Vehicle optimizer</span>
+    <div class="veOpt-title-inner">
+      <div>
+        <div class="veOpt-title-name">
+          <span>Vehicle optimizer</span>
+        </div>
+        <small>v1.0.0</small>
+        <p>
+          Locally remove unnecessary file size from Stormworks vehicle files.
+        </p>
       </div>
-      <small>v0.2.0</small>
-      <p>Locally remove unnecessary file size from Stormworks vehicle files.</p>
+
+      <div class="veOpt-stats">
+        <span class="veOpt-stats-title">global</span>
+        <div>
+          <span>uses</span>
+          <strong id="tool-usage">—</strong>
+        </div>
+        <div>
+          <span>processed</span>
+          <strong><span id="tool-input">—</span> MB</strong>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -86,11 +102,91 @@
       <button class="veOpt-download" id="veOpt-download">Download</button>
     </section>
   </div>
-  <pre class="veOpt-stats">
-    global
-      <span id="tool-usage">—</span> uses
-      <span id="tool-input">—</span> MB processed
-  </pre>
+  <p class="veOpt-notice">
+    no change should ever be noticeable. if something does change,
+    <a
+      href="https://discord.gg/kZZ6QCGz2k"
+      data-telemetry="vopt_notice_discord"
+    >
+      report it on discord</a
+    >
+    or
+    <a
+      href="https://github.com/Stormworks-dev"
+      data-telemetry="veopt_notice_github"
+      >on github</a
+    >.
+  </p>
+  <hr />
+  <div class="veOpt-docs">
+    <section>
+      <h2>what this does</h2>
+      <p>
+        vehicle files contain a lot of redundant and unused XML attributes.
+        removing those typically cuts 13–40% of the file size, reducing the
+        amount of data that needs to be sent, processed, and synchronized. while
+        sometimes unnoticable,
+        <span class="highlight"
+          >savings compound in multiplayer, improving fps, tps, and
+          desync.</span
+        >
+      </p>
+      <details>
+        <summary>Specifically</summary>
+        <ul>
+          <li>
+            removes empty <code>&lt;logic_slots&gt;</code> and
+            <code>&lt;slot/&gt;</code> elements
+          </li>
+          <li>
+            removes <code>ac=""</code> from components that don't use additive
+            color
+          </li>
+          <li>
+            removes <code>r=""</code> when rotation doesn't affect the component
+          </li>
+          <li>removes <code>sc=""</code> when unused</li>
+          <li>removes <code>bc=""</code> when face colors are specified</li>
+          <li>removes default names and descriptions</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
+      <h2>how this works</h2>
+      <p>
+        the file is processed entirely in your browser. it reads through the xml
+        once and applies each rule as it goes.
+        <span class="highlight"
+          >nothing from the vehicle is ever sent anywhere.</span
+        >
+      </p>
+
+      <p>
+        <strong>and this is provably safe</strong>: the parser runs in the
+        browser, is open source, and you can inpsect the bundled js and all
+        network requests in your browser's devtools.
+      </p>
+
+      <details>
+        <summary>Specifically</summary>
+        <span>on every usage, the following is sent:</span>
+        <pre><code> {
+   "type": "tool_process",
+   "tool": "vehicle_optimizer",
+   "input_bytes": _,
+   "output_bytes": _,
+   "processing_ms": _,
+   "blocks_changed": _,
+   "blocks_preserved": _
+  }</code></pre>
+        <p>
+          this data is timestamped and stored server-side to track usage. it
+          contains no vehicle data or IP address.
+        </p>
+      </details>
+    </section>
+  </div>
 
   <script src="/static/tool-stats.js"></script>
   <script src="/static/vehicle-optimizer.bundle.js"></script>

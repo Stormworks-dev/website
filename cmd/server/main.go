@@ -94,7 +94,7 @@ func selectPage(path string) (string, string) {
 	case "/blog":
 		return "web/pages/blog.html", "Blog | Stormworks.dev"
 	case "/tools/vehicle-optimizer":
-		return "web/pages/vehicle-optimizer.html", "Vehicle optimizer | Stormworks.dev"
+		return "web/pages/vehicle-optimizer.html", "Optimizer | Stormworks.dev"
 
 	default:
 		return "web/pages/404.html", "Page not found | Stormworks.dev"
@@ -103,6 +103,9 @@ func selectPage(path string) (string, string) {
 
 func redirectPage(path string) (string, int, bool) {
 	switch path {
+	case "/":
+		return "/tools/vehicle-optimizer", http.StatusMovedPermanently, true
+
 	case "/tools/deadditizer", "/tools/deAdditizer":
 		return "/tools/vehicle-optimizer", http.StatusMovedPermanently, true
 
