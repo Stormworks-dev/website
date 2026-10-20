@@ -246,7 +246,6 @@ footer {
 */
 .releases {
   display: flex;
-  min-height: 200vh;
 }
 .releases-sidebar {
   width: 10rem;
